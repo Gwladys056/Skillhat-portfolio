@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio Website</title>
+    <link rel="stylesheet" href="style (2).css">
+</head>
+<body>
+    <div id="header">
+        <div class="container">
+            <nav>
+                <ul id="sidemenu">
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <i class="fas fa-times" onclick="closemenu()"></i>
+                </ul>
+                <i class="fas fa-times" onclick="openmenu()"></i>
+            </nav>
+            <div class="header-text">
+                <p>Web Developer</p>
+                <hi>Hi, I'm <span>Gwladys</span><br>Meya</hi>
+            </div>
+        </div>
+    </div>
+    <!-- about -->
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="IMG_0486.jpg">
+                </div>
+            </div>
+            <div class="about-col-2">
+                <h1 class="sub-title">About Me</h1>
+                <p>This project is a simple personal portfolio website showcasing the skills, experience, and projects of Gwladys Meya, a web developer.</p>
+                <div class="tab-titles">
+                    <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                    <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                    <p class="tab-links" onclick="opentab('education')">Education</p>
+                </div>
+                <div class="tab-contents" id="experience">
+                    <ul>
+                        <li><span>2016 - 2019</span><br>Medical Technician</li>
+                        <li><span>2020 - 2021</span><br>Customer service</li>
+                        <li><span>2023-2023</span><br>IT Suport</li>
+                        <li><span>2024 - Current</span><br>Web Development Training at DTTP</li>
+                    </ul>
+                </div>
+                <div class="tab-contents" id="education">
+                    <ul>
+                        <li><span>2016</span><br>Master degree in Clinical Biology</li>
+                        <li><span>2023</span><br>Google IT Suport Certification</li>
+                        <li><span>2024</span><br>Web Development Training at DTTP</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- portfolio -->
+    <div id="portfolio">
+        <div class="container">
+            <h1 class="sub-title">My Work</h1>
+            <div class="work-list">
+                <div class="work">
+                    <img src="IMG_0485.jpg">
+                    <div class="layer">
+                        <h3>First Website</h3>
+                        <p>This is my Skillhat portfolio</p>
+                        <a href="#"><i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+                <div class="work">
+                    <img src="IMG_0485.jpg">
+                    <div class="layer">
+                        <h3>Updated Bio Page</h3>
+                        <p>The bio page has added CSS code for better styling with a functioning contact us form</p>
+                        <a href="#"><i class="fa fa-external-link-alt"></a>
+                    </div>
+                </div>
+            </div>
+            <a href="#" class="btn">See More</a>
+        </div>
+    </div>
+    <!-- contact-->
+    <div id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="contact-left">
+                    <h1 class="sub-title">Contact Me</h1>
+                    <p><i class="fas fa-paper-plane"></i> pomimeyag@gmail.com</p>
+                    <p><i class="fas fa-phone-square-alt"></i> +1(555)555.5555</p>
+                    <div class="social-icons">
+                        <a href="https://www.google.com"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="contact-right">
+                    <form action="https://api.web3forms.com/submit" method="POST">
+                        <input type="hidden" name="apikey" value="f8480537-890f-45f0-9c5a-9dd4fa6def92">
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name"><br><br>
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email"><br><br>
+                        <label for="message">Message:</label>
+                        <textarea id="message" name="message"></textarea><br><br>
+                        <input type="submit" value="Send">
+                    </form>
+                    <div id="successMessage" style="display: none; color: rgb(141, 50, 122);">
+                        Your message has been sent successfully.
+                    </div>
+                
+                    <div id="errorMessage" style="display: none; color: rgb(38, 128, 107);">
+                        Oops! There was an error. Please try again later.
+                    </div>
+                
+                </div>
+            </div>
+        </div>
+    </div>
+    
+<script>
+
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+
+    function opentab(tabname){
+        for(tablink of tablinks){
+            tablink.classList.remove("active-link");
+        }
+        for(tabcontent of tabcontents){
+            tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+    }
+
+</script>
+
+<script>
+
+    var sidemeu = document.getElementById("sidemenu");
+
+    function openmenu(){
+        sidemeu.style.right = "0";
+    }
+    function closemenu(){
+        sidemeu.style.right = "-200px";
+    }
+
+</script>
+</body>
+</html>
